@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_demo_bloc_grahpql/bloc/book/atm_location_bloc.dart';
+import 'package:flutter_demo_bloc_grahpql/bloc/atm/atm_location_bloc.dart';
 import 'package:flutter_demo_bloc_grahpql/screens/bank_card_screen.dart';
 
-class BooksScreen extends StatefulWidget {
+class AtmLocationsScreen extends StatefulWidget {
   @override
-  _BooksScreenState createState() => _BooksScreenState();
+  _AtmLocationsScreenState createState() => _AtmLocationsScreenState();
 }
 
-class _BooksScreenState extends State<BooksScreen> {
+class _AtmLocationsScreenState extends State<AtmLocationsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

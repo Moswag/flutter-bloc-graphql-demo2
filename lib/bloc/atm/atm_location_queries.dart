@@ -12,3 +12,15 @@ mutation SearchAtmsByCity(\$city: CitySearchRequest!) {
     latitude
   }
 }''';
+
+
+authenticateUserQuery() => '''
+mutation LoginUser(\$auth: AuthRequest!){
+  login(authRequest: \$auth){
+    loginResponse,
+    isAgent,
+    customerId
+    customerName
+    mobile
+  }
+}''';

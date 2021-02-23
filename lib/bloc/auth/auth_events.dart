@@ -1,0 +1,1 @@
+enum AuthEvents { authenticateUser }
