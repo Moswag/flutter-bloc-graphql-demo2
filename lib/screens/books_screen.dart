@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_demo_bloc_grahpql/bloc/book/book_bloc.dart';
+import 'package:flutter_demo_bloc_grahpql/bloc/book/atm_location_bloc.dart';
 import 'package:flutter_demo_bloc_grahpql/screens/bank_card_screen.dart';
 
 class BooksScreen extends StatefulWidget {
@@ -22,25 +22,25 @@ class _BooksScreenState extends State<BooksScreen> {
                   builder: (BuildContext con) => BankCardScreen())),
         ),
       ),
-      body: BlocBuilder<BooksBloc, BooksState>(
+      body: BlocBuilder<AtmLocationBloc, AtmLocationState>(
         builder: (context, state) {
-          if (state is BooksLoading) {
+          if (state is AtmLocationLoading) {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
-          if (state is LoadBooks) {
-            print(state.books.toString());
+          if (state is LoadAtmLocations) {
+            print(state.atmLocations.toString());
             return ListView.separated(
                 separatorBuilder: (context, index) => Divider(),
-                itemCount: state.books.length,
+                itemCount: state.atmLocations.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(
-                      state.books[index].title,
+                      state.atmLocations[index].name,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    subtitle: Text(state.books[index].author ?? ""),
+                    subtitle: Text(state.atmLocations[index].city ?? ""),
                   );
                 });
           }
